@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'inventario',
+    'categoria',
+    'estudiante',
+    'producto',
+    'genero',
+    'libro',
+    'autor',
     'rest_framework_simplejwt',
 ]
 
@@ -79,7 +84,7 @@ WSGI_APPLICATION = 'inventario_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'inventario_project',
+        'NAME': 'db_project_python',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
@@ -137,11 +142,10 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
  
-    
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
+   
+  
 }
 
 
 
+ 

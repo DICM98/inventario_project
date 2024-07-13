@@ -26,5 +26,11 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('admin/', admin.site.urls),
-    path('api/', include('inventario.api.urls'))
+    path('api/', include('estudiante.api.urls')),
+    path('api/', include('categoria.api.urls')),
+    path('api/', include('producto.api.urls')),
+    path('api/', include('genero.api.urls')),
+    path('api/', include('libro.api.urls')),
+    path('api/', include('autor.api.urls')),
+  
 ]
