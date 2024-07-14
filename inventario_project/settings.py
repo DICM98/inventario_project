@@ -44,7 +44,15 @@ INSTALLED_APPS = [
     'genero',
     'libro',
     'autor',
-    'rest_framework_simplejwt',
+    'reporte_tecnico',
+    'tipo_movimiento',
+    'rol',
+    'usuario',
+    'propiedad',
+    'local',
+    'area_responsible',
+    'area',
+    # 'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -135,16 +143,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-REST_FRAMEWORK = {
-    
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
- 
-   
-  
-}
+
 
 
 
