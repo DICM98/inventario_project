@@ -14,27 +14,40 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+
+
+
 from django.contrib import admin
 from django.urls import path, include 
+from email_service.api.views import EmailAPIView
+
+
 
 
 
 urlpatterns = [
-  
+
+
+    path('send-email/', EmailAPIView.as_view(), name='send-email'),
     path('admin/', admin.site.urls),
-    path('api/', include('estudiante.api.urls')),
-    path('api/', include('categoria.api.urls')),
-    path('api/', include('producto.api.urls')),
-    path('api/', include('genero.api.urls')),
-    path('api/', include('libro.api.urls')),
-    path('api/', include('autor.api.urls')),
     path('api/', include('reporte_tecnico.api.urls')),
     path('api/', include('tipo_movimiento.api.urls')),
     path('api/', include('rol.api.urls')),
     path('api/', include('usuario.api.urls')),
     path('api/', include('propiedad.api.urls')),
     path('api/', include('local.api.urls')),
-    path('api/', include('area_responsible.api.urls')),
+    path('api/', include('area_responsable.api.urls')),
     path('api/', include('area.api.urls')),
+    path('api/', include('clasificacion.api.urls')),
+    path('api/', include('estado.api.urls')),
+    path('api/', include('caracteristica.api.urls')),
+    path('api/', include('categoria.api.urls')),
+    path('api/', include('marca.api.urls')),
+    path('api/', include('propiedad_baja.api.urls')),
+
+  
+    
+   
   
 ]

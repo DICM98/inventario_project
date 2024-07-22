@@ -38,21 +38,25 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'categoria',
-    'estudiante',
-    'producto',
-    'genero',
-    'libro',
-    'autor',
+    'rest_framework_simplejwt',
     'reporte_tecnico',
     'tipo_movimiento',
     'rol',
     'usuario',
     'propiedad',
     'local',
-    'area_responsible',
+    'area_responsable',
     'area',
-    # 'rest_framework_simplejwt',
+    'estado',
+    'caracteristica',
+    'marca',
+    'clasificacion',
+    'categoria',
+    'propiedad_baja',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
+    'email_service',
+    
 ]
 
 MIDDLEWARE = [
@@ -145,6 +149,47 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+REST_FRAMEWORK = {
 
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+ 
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+     ), 
+    
+   
+  
+}
 
  
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Your Project API',
+    'DESCRIPTION': 'Your project description',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
+
+
+SPECTACULAR_SETTINGS = {
+    'SWAGGER_UI_DIST': 'SIDECAR',  # shorthand to use the sidecar instead
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
+    # OTHER SETTINGS
+}
+
+
+# Servidor Correo
+DEFAULT_FROM_EMAIL = 'companionimirandadenzel@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = DEFAULT_FROM_EMAIL
+EMAIL_HOST_PASSWORD = 'yvfn fkrv nhzy zrjo'
+

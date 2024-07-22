@@ -1,17 +1,15 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
-
-# Create your models here.
 class Reporte_Tecnico (models.Model):
-    transfer_request=models.TextField()
-    authorized=models.BooleanField()
-    position=models.CharField(max_length=100)
-    created_at=models.DateTimeField(auto_now_add=True)
-    authorized_date=models.DateTimeField(auto_now_add=True)
-    approved=models.BooleanField()
-    approved_date=models.DateTimeField(auto_now_add=True)
-    transported_date=models.DateTimeField(auto_now_add=True)
-    name_fact=models.CharField(max_length=200)
+    solicitud_transferencia=models.TextField()
+    autorizado=models.BooleanField()
+    posicion=models.CharField(max_length=100)
+    fecha_creacion=models.DateTimeField(auto_now_add=True)
+    fecha_autorizado=models.DateTimeField(auto_now_add=True)
+    aprobado=models.BooleanField()
+    fecha_aprobado=models.DateTimeField(auto_now_add=True)
+    fecha_traspaso=models.DateTimeField(auto_now_add=True)
+    nombre_hecho=models.CharField(max_length=200)
+    valor=models.IntegerField()
     
